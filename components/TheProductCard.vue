@@ -9,12 +9,7 @@
         <v-list-item-subtitle>by Kurt Wagner</v-list-item-subtitle>
       </v-list-item-content>
     </v-list-item>
-
-    <v-img
-      src="https://cdn.vuetifyjs.com/images/cards/mountain.jpg"
-      height="194"
-    ></v-img>
-
+    <v-img :src="imageLink" height="194"></v-img>
     <v-card-text>
       Visit ten places on our planet that are undergoing the biggest changes
       today.
@@ -29,10 +24,10 @@
       </v-btn>
       <div class="flex-grow-1"></div>
       <v-btn icon>
-        <v-icon>mdi-heart</v-icon>
+        <v-icon>mdi-eco</v-icon>
       </v-btn>
       <v-btn icon>
-        <v-icon>mdi-share-variant</v-icon>
+        <v-icon>mdi-cart</v-icon>
       </v-btn>
     </v-card-actions>
   </v-card>
@@ -40,7 +35,18 @@
 
 <script>
 export default {
-  name: 'TheProductCard'
+  name: 'TheProductCard',
+  props: {
+    imageLink: {
+      type: String,
+      default: ''
+    }
+  },
+  computed: {
+    transformedUrl() {
+      return ''
+    }
+  }
 }
 </script>
 
